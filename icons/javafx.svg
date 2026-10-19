@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="jfxOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9800"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="jfxBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#29B6F6"/>
+      <stop offset="100%" stop-color="#0277BD"/>
+    </linearGradient>
+  </defs>
+  <!-- Java coffee cup steam in vibrant orange -->
+  <path fill="url(#jfxOrange)" d="M26.2 30.5c3 3.5-.8 6.6-.8 6.6s7.7-4 4.2-9c-3.3-4.6-5.8-7 7.9-15 0 0-21.6 5.4-11.3 17.4z"/>
+  <path fill="url(#jfxOrange)" d="M29.6.8s6.5 6.5-6.3 16.5c-10.2 8.1-2.4 12.7 0 18-6-5.4-10.3-10.1-7.4-14.5 5.5-8 17.1-11.1 13.7-20z"/>
+  <!-- Java coffee cup base in vibrant blue -->
+  <path fill="url(#jfxBlue)" d="M15 49s-2.4 1.4 1.7 1.8c5 .6 7.5.5 13-.5 0 0 1.4.9 3.5 1.7-12.3 5.3-27.8-.3-18.2-3zm-1.5-6.9s-2.7 2 1.4 2.4c5.3.6 9.5.6 16.8-.8 0 0 1 1 2.6 1.6-14.9 4.4-31.5.3-20.8-3.2z"/>
+  <path fill="url(#jfxBlue)" d="M42.5 54.1c11.3.7 20.7-.4 21.1-5.8 0 0-.8 2-9.4 3.7-9.7 1.8-13.6 1.6-20.7.4 0 0 1.4 1.2 9 1.7z"/>
+  <!-- Bold FX badge -->
+  <rect x="29" y="24" width="33" height="24" rx="6" fill="#0b172a" stroke="url(#jfxOrange)" stroke-width="2.5"/>
+  <text x="32.5" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="16" fill="#FFA726" letter-spacing="-0.5">FX</text>
+</svg>

@@ -1,0 +1,774 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tejas Bhor — Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description"
+    content="Tejas Dnyaneshwar Bhor — AI & Data Science Graduate, Flutter & Full-Stack Developer. Portfolio showcasing projects, skills and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Skills section — pill layout inspired by the provided reference */
+    #skills .skills-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      max-width: 100%;
+    }
+
+    #skills .skill-category {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #skills .skill-category-title {
+      margin: 0;
+      color: #85809f;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1px;
+    }
+
+    #skills .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+    }
+
+    #skills .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.045);
+      color: #e8e6f0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    #skills .skill-pill:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.075);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    #skills .skill-pill img,
+    #skills .skill-pill svg {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      flex: 0 0 20px;
+    }
+
+    @media (max-width: 600px) {
+      #skills .skill-pill {
+        min-height: 44px;
+        padding: 0 14px;
+        font-size: 14px;
+      }
+
+      #skills .skill-pill img,
+      #skills .skill-pill svg {
+        width: 18px;
+        height: 18px;
+        flex-basis: 18px;
+      }
+    }
+  </style>
+
+
+  <style>
+    /* Clean technology orbit around the profile photo */
+    .hero-card {
+      position: relative;
+      overflow: visible !important;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 2;
+      overflow: visible !important;
+    }
+
+    .hero-tech-orbit {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .hero-tech {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 42px;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 999px;
+      background: rgba(13, 14, 25, .88);
+      color: #e9e7f2;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .30), inset 0 1px 0 rgba(255, 255, 255, .06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      animation: techFloat 5s ease-in-out infinite;
+    }
+
+    .hero-tech img,
+    .hero-tech-icon {
+      width: 19px;
+      height: 19px;
+      object-fit: contain;
+      flex: 0 0 19px;
+    }
+
+    .hero-tech-icon.oracle {
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f80000;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    /* Positions are intentionally spaced so badges never touch or overlap. */
+    .hero-tech:nth-child(1) {
+      top: 2%;
+      left: -8%;
+      animation-delay: -.2s;
+    }
+
+    .hero-tech:nth-child(2) {
+      top: 25%;
+      left: -14%;
+      animation-delay: -1.1s;
+    }
+
+    .hero-tech:nth-child(3) {
+      top: 10%;
+      right: -12%;
+      animation-delay: -2s;
+    }
+
+    .hero-tech:nth-child(4) {
+      bottom: 15%;
+      left: -13%;
+      animation-delay: -2.9s;
+    }
+
+    .hero-tech:nth-child(5) {
+      bottom: 3%;
+      right: -7%;
+      animation-delay: -3.8s;
+    }
+
+    .hero-tech:nth-child(6) {
+      bottom: 32%;
+      right: -14%;
+      animation-delay: -4.7s;
+    }
+
+    @keyframes techFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-tech {
+        height: 38px;
+        padding: 0 11px;
+        font-size: 12px;
+        gap: 6px;
+      }
+
+      .hero-tech img,
+      .hero-tech-icon {
+        width: 17px;
+        height: 17px;
+        flex-basis: 17px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-tech-orbit {
+        inset: 0;
+      }
+
+      .hero-tech {
+        height: 34px;
+        padding: 0 9px;
+        font-size: 10px;
+      }
+
+      .hero-tech:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      .hero-tech:nth-child(2) {
+        top: 24%;
+        left: -3%;
+      }
+
+      .hero-tech:nth-child(3) {
+        top: 0;
+        right: 0;
+      }
+
+      .hero-tech:nth-child(4) {
+        bottom: 17%;
+        left: -2%;
+      }
+
+      .hero-tech:nth-child(5) {
+        bottom: 0;
+        right: 0;
+      }
+
+      .hero-tech:nth-child(6) {
+        bottom: 31%;
+        right: -2%;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="site-bg">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Tejas Bhor</a>
+      <nav class="nav" id="nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="socials">
+        <a href="https://github.com/tejas2213" aria-label="GitHub" title="GitHub" class="social-link social-link-icon">
+          <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" aria-hidden="true">
+          <span class="sr-only">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/tejas-bhor-536265180" aria-label="LinkedIn" title="LinkedIn"
+          class="social-link social-link-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="#0A66C2"></rect>
+            <path
+              d="M7.2 9.1H9.9V17H7.2V9.1Zm1.35-3.6c.84 0 1.48.62 1.48 1.4 0 .81-.64 1.43-1.5 1.43-.83 0-1.47-.62-1.47-1.43 0-.78.64-1.4 1.49-1.4ZM11.9 9.1h2.6v1.08h.04c.36-.64 1.25-1.3 2.57-1.3 2.75 0 3.26 1.72 3.26 3.96V17h-2.72v-3.78c0-.9-.02-2.06-1.25-2.06-1.25 0-1.44.98-1.44 2V17H11.9V9.1Z"
+              fill="#fff"></path>
+          </svg>
+          <span class="sr-only">LinkedIn</span>
+        </a>
+      </div>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Hi, I'm Tejas Bhor</h1>
+          <p class="lead">AI &amp; Data Science Graduate with hands-on experience building production mobile apps,
+            backend APIs, and autonomous AI automation agents.
+            Skilled across Flutter, Node.js, and LLM-powered systems.</p>
+          <p class="hero-sub">Flutter Developer — AI Automation — Full-Stack Engineer</p>
+          <div class="hero-badges">
+            <span class="badge">Flutter</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">AI Agents</span>
+            <span class="badge">Firebase</span>
+            <span class="badge">Python</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">See my work</a>
+            <a class="btn ghost" href="mailto:tejasbhor2003@gmail.com">Email</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-image-wrap">
+            <img id="heroImageBack" src="tejas.png" alt="Tejas Dnyaneshwar Bhor" class="hero-image hero-image-back" />
+
+          </div>
+          <div class="hero-tech-orbit" aria-label="Technologies">
+            <span class="hero-tech"><img src="https://cdn.simpleicons.org/flutter/02569B" alt="">Flutter</span>
+            <span class="hero-tech"><img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="">Node.js</span>
+            <span class="hero-tech"><img src="https://cdn.simpleicons.org/python/3776AB" alt="">Python</span>
+            <span class="hero-tech"><img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="">Firebase</span>
+            <span class="hero-tech"><img src="icons/llm.svg" alt="LLM / AI">LLM / AI</span>
+            <span class="hero-tech"><img src="https://cdn.simpleicons.org/dart/0175C2" alt="">Dart</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>AI &amp; Data Science graduate with hands-on experience building production mobile apps, backend APIs, and
+          autonomous AI automation agents. Skilled across Flutter, Node.js, and LLM-powered systems, with a track record
+          of taking on responsibilities beyond an assigned role to ship real production features. Looking to contribute
+          to engineering teams building impactful, AI-driven software.</p>
+        <div class="community-card">
+          <div>
+            <p class="community-kicker">Open Source &amp; Community</p>
+            <h3>Building production-grade apps used by real users</h3>
+            <p class="muted">From multi-role healthcare platforms to AI automation agents for social media — I build
+              software that solves real problems at scale.</p>
+          </div>
+          <a class="btn primary community-link" href="https://github.com/tejas2213" target="_blank"
+            rel="noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <div class="grid">
+
+          <article class="card">
+            <h3>PavePilot AI &mdash; Software Engineer &middot; Flutter, Full-Stack &amp; AI Automation</h3>
+            <p class="muted">Jan 2026 &ndash; Aug 2026</p>
+            <ul>
+              <li>Hired as a Flutter Developer; expanded scope into full-stack engineering, shipping production-ready
+                REST APIs in Node.js.</li>
+              <li>Designed and built five autonomous AI agents for social-platform growth (LinkedIn, X/Twitter,
+                Instagram, YouTube Shorts, and Reddit), automating trend research, content generation, scheduling,
+                posting, and engagement optimization end-to-end.</li>
+              <li>Implemented sentiment-aware reply generation, personalized B2B outreach sequencing, and AI-generated
+                hooks, hashtags, and CTA strategies.</li>
+              <li>Contributed to PaveSocial &mdash; an agentic multi-network social media scheduling platform &mdash;
+                built frontend (React, Tailwind CSS) and backend (Node.js, NestJS) features, integrating official APIs
+                for Instagram, Facebook, Threads, X, LinkedIn, YouTube, and Reddit.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Gromage Infotech &mdash; Freelance Flutter Developer &middot; Chitrank App</h3>
+            <p class="muted">May 2025 &ndash; December 2025</p>
+            <ul>
+              <li>Developed a B2B mobile application for local businesses featuring user authentication, subscription
+                plans, auto messaging, digital business cards, and festival graphic templates.</li>
+              <li>Built a Super Admin Panel with role-based access, graphics &amp; quote management, Razorpay
+                subscription &amp; payment management, user management, notification system, and analytics dashboard.
+              </li>
+              <li>Technologies used include Flutter, Firebase, and Razorpay integration.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Spring Edge Technologies Pvt. Ltd. &mdash; Mobile Developer Intern</h3>
+            <p class="muted">Jan 2025 &ndash; April 2025</p>
+            <ul>
+              <li>Contributed to Flutter app development with a focus on state management using Riverpod and Provider,
+                API integration, and performance optimization.</li>
+              <li>Collaborated on debugging, implementing new features, and enhancing scalability and performance.</li>
+              <li>Worked on IRIS Peridot (GST compliance), VAYU (grocery delivery), KundaliCard (astrology app), and
+                CoBanks (banking services).</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Incubators Systems Pvt. Ltd. &mdash; Mobile Developer</h3>
+            <p class="muted">Aug 2024 &ndash; Dec 2024</p>
+            <ul>
+              <li>Developed and optimized Flutter applications with responsive UI and efficient state management using
+                Firebase.</li>
+              <li>Built key features for CareSync &mdash; a multi-role healthcare platform &mdash; including appointment
+                booking, medicine orders, ambulance booking, blood donor search, real-time chat, and full admin
+                controls.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>B.E. in Artificial Intelligence &amp; Data Science</h3>
+            <p class="muted">Zeal College of Engineering and Research, Pune — 2021–2025 · CGPA: 8.11</p>
+            <p>Graduated with specialization in AI &amp; Data Science, developing expertise in machine learning, LLMs,
+              and intelligent systems.</p>
+          </article>
+
+          <article class="card">
+            <h3>HSC — 12th Grade</h3>
+            <p class="muted">Sir Parashurambbhau College (Pune) — 2021 · 80.33%</p>
+            <p>Completed Higher Secondary Certificate with distinction from Sir Parashurambbhau College, Pune.</p>
+          </article>
+
+          <article class="card">
+            <h3>SSC — 10th Grade</h3>
+            <p class="muted">Shri Shivaji Preparatory Military School, Pune — 2019 · 70%</p>
+            <p>Completed Secondary School Certificate from Shri Shivaji Preparatory Military School, Pune.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="project-thumb"
+              style="background-image:linear-gradient(135deg,rgba(2,86,155,0.18),rgba(98,203,252,0.10));">
+              <div class="project-title">Chat App (Flutter)</div>
+            </div>
+            <p>A modern real-time messaging app with secure OTP login, real-time text/voice/audio waveform messaging,
+              image sharing, and friend request management. Built with Flutter, Firebase (Auth, Firestore, Storage), and
+              BLoC architecture.</p>
+            <a class="link" href="https://github.com/tejas2213/chat_app" target="_blank" rel="noreferrer">View on GitHub
+              →</a>
+          </article>
+          <article class="card">
+            <div class="project-thumb"
+              style="background-image:linear-gradient(135deg,rgba(110,231,183,0.12),rgba(96,173,246,0.08));">
+              <div class="project-title">News App (Flutter)</div>
+            </div>
+            <p>Feature-rich Flutter app with Clean Architecture and Riverpod. Implements Firebase Auth, NewsAPI
+              integration with pagination, search, pull-to-refresh, offline reading, Dark/Light mode toggle, local
+              caching with SQLite, and image caching.</p>
+            <a class="link" href="https://github.com/tejas2213/News-App" target="_blank" rel="noreferrer">View on GitHub
+              →</a>
+          </article>
+          <article class="card">
+            <div class="project-thumb"
+              style="background-image:linear-gradient(135deg,rgba(180,80,250,0.12),rgba(96,120,246,0.08));">
+              <div class="project-title">Smart Face Detection Camera (Flutter)</div>
+            </div>
+            <p>AI-powered Flutter camera app with real-time face detection using Google ML Kit. Features
+              blink-to-capture, blur detection, image quality analysis, Material 3 design, gradient-based UI, torch,
+              camera flip, and color-coded analysis cards.</p>
+            <a class="link" href="https://github.com/tejas2213/smart_face_detection_camera_app" target="_blank"
+              rel="noreferrer">View on GitHub →</a>
+          </article>
+          <article class="card">
+            <div class="project-thumb"
+              style="background-image:linear-gradient(135deg,rgba(246,96,96,0.12),rgba(246,173,96,0.08));">
+              <div class="project-title">CareSync App (Flutter)</div>
+            </div>
+            <p>A multi-role healthcare platform for patients, doctors, and admins. Patients book appointments, order
+              medicines, access Ayurveda info, book ambulances, find blood donors, and chat with doctors. Admins manage
+              medical stores and Ayurveda details.</p>
+            <a class="link" href="https://github.com/tej-229/CareSync" target="_blank" rel="noreferrer">View on GitHub
+              →</a>
+          </article>
+          <article class="card">
+            <div class="project-thumb"
+              style="background-image:linear-gradient(135deg,rgba(96,200,96,0.12),rgba(96,173,246,0.08));">
+              <div class="project-title">Krushi Sahayak (Java)</div>
+            </div>
+            <p>A JavaFX desktop app designed to assist Indian farmers by providing agricultural resources and tools.
+              Built with Java, JavaFX, and Firebase Firestore. Features Crop Information, Weather Forecast, Community
+              Posts, Shopping, and Market Updates.</p>
+            <a class="link" href="https://github.com/tej-229/Krushi_Sahayak" target="_blank" rel="noreferrer">View on
+              GitHub →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Skills</h2>
+
+        <div class="skills-showcase" aria-label="Skills and tools">
+
+          <!-- ================= LANGUAGES ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Programming Languages</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="icons/java.svg" alt="Java">
+                <span>Java</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python">
+                <span>Python</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/dart/0175C2" alt="Dart">
+                <span>Dart</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript">
+                <span>JavaScript</span>
+              </div>
+
+
+
+            </div>
+          </div>
+
+
+          <!-- ================= FRAMEWORKS ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Frameworks &amp; Libraries</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/flutter/02569B" alt="Flutter">
+                <span>Flutter</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/react/61DAFB" alt="React">
+                <span>React</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/nodedotjs/339933" alt="Node.js">
+                <span>Node.js</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/express/FFFFFF" alt="Express.js">
+                <span>Express.js</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/nestjs/E0234E" alt="NestJS">
+                <span>NestJS</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="icons/javafx.svg" alt="JavaFX">
+                <span>JavaFX</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS">
+                <span>Tailwind CSS</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- ================= AI ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">AI &amp; Automation</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="icons/ai-agent.svg" alt="LLM-Powered AI Agents">
+                <span>LLM-Powered AI Agents</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/anthropic/FFFFFF" alt="Anthropic Claude">
+                <span>Anthropic Claude</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="icons/openai.svg" alt="OpenAI APIs">
+                <span>OpenAI APIs</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Model Context Protocol (MCP)</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Prompt Engineering</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Workflow Automation</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- ================= DATABASE ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Databases &amp; Storage</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/firebase/FFCA28" alt="Firebase">
+                <span>Firebase</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/sqlite/003B57" alt="SQLite">
+                <span>SQLite</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>SharedPreferences</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- ================= INTEGRATIONS ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Integrations &amp; Payments</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/razorpay/02042B" alt="Razorpay">
+                <span>Razorpay</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe">
+                <span>Stripe</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ================= TOOLS ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">Tools &amp; DevOps</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/git/F05032" alt="Git">
+                <span>Git</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub">
+                <span>GitHub</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="icons/vscode.svg" alt="VS Code">
+                <span>VS Code</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/androidstudio/3DDC84" alt="Android Studio">
+                <span>Android Studio</span>
+              </div>
+
+              <div class="skill-pill">
+                <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman">
+                <span>Postman</span>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- ================= STATE MANAGEMENT ================= -->
+          <div class="skill-category">
+            <h3 class="skill-category-title">State Management &amp; Architecture</h3>
+            <div class="skill-pills">
+
+              <div class="skill-pill">
+                <span>BLoC</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Riverpod</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Provider</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>Clean Architecture</span>
+              </div>
+
+              <div class="skill-pill">
+                <span>REST APIs</span>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>If you'd like to work together or have a question, send me a message using the form below or email me
+          directly at <a href="mailto:tejasbhor2003@gmail.com">tejasbhor2003@gmail.com</a>.
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xnjyrgzq" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@domain.com">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required
+              placeholder="Brief message or project details"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send message</button>
+            <div id="formStatus" class="note" aria-live="polite"></div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Tejas Dnyaneshwar Bhor — Built with care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
