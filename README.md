@@ -53,39 +53,6 @@ A modern, fast, and responsive portfolio showcasing my experience as an **AI & D
 
 ---
 
-## 💻 Running Locally
-
-This site is built with modern HTML5, CSS3, and JavaScript with zero external build tools required.
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/tejas2213/TejasBhorsite-main.git
-   cd TejasBhorsite-main
-   ```
-
-2. **Run a local server:**
-   Using Python:
-   ```bash
-   python -m http.server 8080
-   ```
-   Or using Node (`npx serve`):
-   ```bash
-   npx serve .
-   ```
-
-3. **Open in browser:**
-   Navigate to [http://localhost:8080](http://localhost:8080).
-
----
-
-## 🚢 Free Deployment
-
-This static site can be deployed 100% free with automated HTTPS:
-
-- **GitHub Pages:** Go to repository **Settings** → **Pages** → Branch `main` → Folder `/ (root)` → **Save**.
-- **Vercel / Netlify:** Import repository and deploy with standard static site presets.
-
----
 
 ## 📬 Contact & Connect
 
