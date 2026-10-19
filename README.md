@@ -1,4 +1,4 @@
-# Tejas Bhor — Flutter & Full-Stack Developer
+# Tejas Bhor — Flutter Developer
 
 [![Live Portfolio](https://img.shields.io/badge/Portfolio-View%20Live-6ee7b7?style=flat&logo=googlechrome&logoColor=071022)](https://tejas2213.github.io/TejasBhorsite-main/)
 [![GitHub](https://img.shields.io/badge/GitHub-tejas2213-181717?style=flat&logo=github)](https://github.com/tejas2213)
