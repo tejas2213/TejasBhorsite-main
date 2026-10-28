@@ -122,11 +122,90 @@ body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial
   .hero-image-back{width:250px;height:285px;object-position:50% 12%}
 }
 
-/* Project thumbnail and overlay */
-.project-thumb{height:180px;border-radius:10px;background:linear-gradient(135deg,rgba(96,173,246,0.08),rgba(110,231,183,0.06));display:flex;align-items:flex-end;padding:14px;color:var(--fg);position:relative;overflow:hidden}
-.project-thumb-image{position:absolute;inset:0;margin:auto;width:92px;height:92px;object-fit:contain;z-index:1;filter:drop-shadow(0 12px 20px rgba(2,6,23,0.35))}
-.project-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));opacity:1;pointer-events:none}
-.project-title{position:relative;z-index:2;font-weight:700}
+/* Projects card layout and uniform alignment */
+.projects .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects .card p {
+  flex: 1;
+}
+
+/* Project thumbnail, logo container, and overlay */
+.project-thumb {
+  height: 210px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(96,173,246,0.08), rgba(110,231,183,0.06));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 14px 14px;
+  color: var(--fg);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55));
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-logo-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  min-height: 120px;
+}
+
+.project-thumb-image,
+.project-logo-container img {
+  width: 100px;
+  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  z-index: 2;
+  filter: drop-shadow(0 10px 18px rgba(2,6,23,0.40));
+  transition: transform 0.3s ease;
+}
+
+.project-logo-container img.krushi-logo,
+.project-thumb-image.krushi-logo,
+.project-logo-container img[src*="krushi-sahayak"] {
+  width: 280px;
+  max-width: 95%;
+  height: 95px;
+  max-height: 95px;
+  transform: none;
+}
+
+.card:hover .project-thumb-image,
+.card:hover .project-logo-container img {
+  transform: scale(1.06);
+}
+
+.project-title {
+  position: relative;
+  z-index: 2;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.35;
+  min-height: 44px;
+  display: flex;
+  align-items: flex-end;
+}
 
 /* Contact form */
 .contact-form{max-width:680px;margin-top:18px}
