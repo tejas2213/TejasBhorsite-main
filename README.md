@@ -8,7 +8,7 @@
 
 Welcome to my personal portfolio! I am an **AI & Data Science graduate** and developer passionate about building responsive mobile applications, scalable web solutions, and AI-powered automation tools.
 
-**Core Skills:** Flutter, Dart, Firebase, BLoC, REST APIs, JavaScript, Node.js, and AI Integration.
+**Core Skills:** Flutter, Dart, Firebase, BLoC, REST APIs, AI Agents, and LLM Integration.
 
 Explore my projects, technical skills, and development journey below.
 
